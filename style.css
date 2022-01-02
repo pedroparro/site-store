@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;/*retira sublinhado*/
+}
+/*distancia altura*/
+section{
+    padding: 110px 0;
+}
+section .title{
+    /*position: relative;*/
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 40px;
+    font-weight: 500;
+
+}
+.section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #fff;
+    transform: translateX(-50%);/*barra*/
+
+}
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    transition: all 0.3s ease;
+    background: #000;
+}
+/*script */
+.navbar.sticky{
+    padding: 15px 0;
+    padding-top: 0px;
+    background: crimson;
+}
+.navbar.sticky .logo a span {
+    color: #000;
+}
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a {
+    font-size: 35px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span {
+    color: rgba(245, 141, 4, 0.678);
+    transition: all 0.3s ease;
+}
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;/*alinhou o menu em linha*/
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    padding: 25px;/*distancia menu*/
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.navbar .menu li a:hover {
+    color: rgb(252, 188, 11);
+}
+/*menu mobile------------------------------------------------------------------------------------*/
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+/*produtos---------------------------------------------------------------------------------------*/
+.product{
+    background: #111;
+    color: #fff;
+}
+.product .title::before{
+    background: #fff;
+}
+.product .title::after{
+    background: #000;
+    content: "";
+}
+/*ajusta em linha*/
+.product .product-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;/*separa os cards*/
+}
+.product .product-content .card {
+    width: calc(33% - 20px);
+    height: 350px;
+    background: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    margin-top: 25px;/*separa cards abaixo*/
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.product .product-content .card:hover{
+    background: #fff;
+}
+.product .product-content .card .box {
+    transition: all 0.3s ease;
+}
+.product .product-content .card:hover .box {
+    transform: scale(1.05);
+}
+.product .product-content .card i {
+    font-size: 30px;
+    color: hsl(348, 83%, 47%);
+    transition: all 0.3s ease;
+}
+.product .product-content .card:hover i {
+    color: rgb(10, 1, 1);
+}
+.product .product-content .card .text {
+    color: rgb(228, 194, 1);
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.product .product-content .card img {
+    background: #fff;
+}
+.product .product-content .description{
+    background: #fff;
+    color: #000;
+}
+footer{
+    background: #110;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+}
+footer span a {
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover {
+    text-decoration: underline;
+}
+/*responsive----------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1081px) and (max-width: 1350px){
+    .max-width{
+        padding: 0 50px;/*distancia menu*/
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 1080px){
+    .max-width{
+        padding: 0 50px;/*distancia menu*/
+    }
+    .menu-btn {
+        display: block;
+        z-index: 999;/*mostra o botao*/
+    }
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        left: -100%;/*-100%*/
+        top: 0;
+        color: #fff;
+        background: #000;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;/*corre para o lado*/
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .product .product-content {
+        justify-content: space-between;/*separa os cards*/
+        width: 100%;
+    }
+    .product .product-content .card .text {
+        justify-content: center;
+        text-align: center;
+        margin: 0px;
+        padding: 0 10px;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    .product .product-content .card {
+        width: 48%;
+        height: 40%;
+        justify-content: center;
+        text-align: center;
+        font-size: 15px;
+        padding: 5px;
+        margin: 1%;
+    }
+    .product .product-content .card .box {
+        justify-content: center;
+        text-align: center;
+        width: 48%;
+        font-size: 15px;
+    }
+    .product .product-content .card .box i {
+        width: 100%;
+        margin: 10px;
+        margin-bottom: -100px;
+        padding: 0 30px;
+        font-size: 30px;
+        justify-content: center;
+        text-align: center;
+    }
+    .product .product-content .card img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 1%;
+        justify-content: center;
+        text-align: center;
+    }
+    .product .product-content .card .description {
+        width: 100%;
+        height: 200px;
+        text-align: left;
+        padding-top: 0px;
+        font-size: 15px;
+   
+    }
+}
+@media only screen and (max-width: 500px){
+    .max-width{
+        padding: 0 50px;/*distancia menu*/
+    }
+    .menu-btn {
+        display: block;
+        z-index: 999;/*mostra o botao*/
+    }
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        left: -100%;/*-100%*/
+        top: 0;
+        color: #fff;
+        background: #000;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;/*corre para o lado*/
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .product .product-content {
+        justify-content: space-between;/*separa os cards*/
+        justify-content: center;
+        text-align: center;
+    }
+    .product .product-content .card .text {
+        text-align: center;
+        margin: 0px;
+        padding: 0 10px;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    .product .product-content .card {
+        width: 48%;
+        height: 40%;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 15px;
+        padding: 5px;
+        margin: 1%;
+    }
+    .product .product-content .card .box {
+        flex-direction: column;
+        justify-content: center;
+        width: 48%;
+        font-size: 15px;
+        text-align: center;
+    }
+    .product .product-content .card .box i {
+        width: 100%;
+        margin: 10px;
+        margin-bottom: -100px;
+        padding: 0 30px;
+        font-size: 30px;
+    }
+    .product .product-content .card img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 1%;
+    }
+    .product .product-content .card .description {
+        width: 100%;
+        height: 200px;
+        text-align: left;
+        padding-top: 0px;
+        font-size: 15px;
+   
+    }
+
+}
