@@ -1,2 +1,2 @@
 # site-store
-Site responsivo Loja
+Site responsivo Marcas
