@@ -1,3 +1,3 @@
 # site-marcas
-# Site responsivo Marcas
+# Exemplo de Site responsivo Marcas
 # https://pedroparro.github.io/site-store/
